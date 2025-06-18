@@ -6,9 +6,20 @@
   <link rel="stylesheet" href="../css/menu.css">
   <script>
     if (window.location.hostname.includes('github.io')) {
+      // Aplica o <base>
       const base = document.createElement('base');
       base.href = '/Scottsboro-Boys/';
       document.head.appendChild(base);
+
+      // Corrige os links que não respeitam o <base> imediatamente
+      window.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('a[href]').forEach(link => {
+          const href = link.getAttribute('href');
+          if (href.startsWith('index.html') || href.startsWith('pages/')) {
+            link.setAttribute('href', '/Scottsboro-Boys/' + href);
+          }
+        });
+      });
     }
   </script>
 </head>
