@@ -2,17 +2,23 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1600, height=900">
   <title>Scottsboro Boys</title>
-  <base href="/Scottsboro-Boys/">
   <link rel="stylesheet" href="../css/menu.css">
+  <script>
+    if (window.location.hostname.includes('github.io')) {
+      const base = document.createElement('base');
+      base.href = '/Scottsboro-Boys/';
+      document.head.appendChild(base);
+    }
+  </script>
+</head>
 </head>
 <body>
   <div class="container">
     <nav class="sidebar">
       <ul>
         <!-- <li></li> -->
-        <li><a href="/index.html">INDEX</a></li>
+        <li><a href="index.html">INDEX</a></li>
         <li><a href="linha_do_tempo.html">Linha do Tempo</a></li>
         <li><a href="os_nove_scottsboro.html">Os Nove de Scottsboro</a></li>
         <li><a href="justica_e_injustica.html">Justiça e Injustiça</a></li>
