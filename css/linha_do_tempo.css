@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Old Standard TT', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 1600px;
+  height: 900px;
+  background: url("../assets/capa-menu.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  border-radius: 6px;
+}
