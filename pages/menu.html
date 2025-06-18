@@ -6,22 +6,26 @@
   <link rel="stylesheet" href="../css/menu.css">
   <script>
     if (window.location.hostname.includes('github.io')) {
-      // Aplica o <base>
       const base = document.createElement('base');
       base.href = '/Scottsboro-Boys/';
       document.head.appendChild(base);
 
-      // Corrige os links que não respeitam o <base> imediatamente
       window.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('a[href]').forEach(link => {
           const href = link.getAttribute('href');
-          if (href.startsWith('index.html') || href.startsWith('pages/')) {
-            link.setAttribute('href', '/Scottsboro-Boys/' + href);
+          if (
+            href &&
+            href.endsWith('.html') &&
+            !href.startsWith('http') &&
+            !href.startsWith('/Scottsboro-Boys/')
+          ) {
+            link.setAttribute('href', '/Scottsboro-Boys/' + href.replace(/^\.?\.\//, ''));
           }
         });
       });
     }
   </script>
+
 </head>
 </head>
 <body>
@@ -30,15 +34,15 @@
       <ul>
         <!-- <li></li> -->
         <li><a href="index.html">INDEX</a></li>
-        <li><a href="linha_do_tempo.html">Linha do Tempo</a></li>
-        <li><a href="os_nove_scottsboro.html">Os Nove de Scottsboro</a></li>
         <li><a href="pages/justica_e_injustica.html">Justiça e Injustiça</a></li>
-        <li><a href="reacao_publica.html">A Reação Pública</a></li>
-        <li><a href="impacto_historico.html">Impacto Histórico</a></li>
-        <li><a href="perguntas.html">Perguntas</a></li>
+        <!-- <li><a href="linha_do_tempo.html">Linha do Tempo</a></li> -->
+        <!-- <li><a href="os_nove_scottsboro.html">Os Nove de Scottsboro</a></li> -->
+        <!-- <li><a href="reacao_publica.html">A Reação Pública</a></li> -->
+        <!-- <li><a href="impacto_historico.html">Impacto Histórico</a></li> -->
+        <!-- <li><a href="perguntas.html">Perguntas</a></li>
         <li><a href="teorias_criminologicas.html">Teorias Criminológicas</a></li>
         <li><a href="para_refletir.html">Para Refletir</a></li>
-        <li><a href="recursos_referencias.html">Recursos e Referências</a></li>
+        <li><a href="recursos_referencias.html">Recursos e Referências</a></li> -->
       </ul>
     </nav>
 

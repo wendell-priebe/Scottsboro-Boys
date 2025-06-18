@@ -9,8 +9,23 @@
       const base = document.createElement('base');
       base.href = '/Scottsboro-Boys/';
       document.head.appendChild(base);
+
+      window.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('a[href]').forEach(link => {
+          const href = link.getAttribute('href');
+          if (
+            href &&
+            href.endsWith('.html') &&
+            !href.startsWith('http') &&
+            !href.startsWith('/Scottsboro-Boys/')
+          ) {
+            link.setAttribute('href', '/Scottsboro-Boys/' + href.replace(/^\.?\.\//, ''));
+          }
+        });
+      });
     }
   </script>
+
 </head>
 
 <body>
