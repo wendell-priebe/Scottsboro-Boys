@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Old Standard TT', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../assets/capa-menu.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container {
+
+
+  display: flex;
+  padding-left: 40px; /* espaço entre a borda da tela e a sidebar */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.sidebar {
+  width: 200px;
+  font-size: 1.4em;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: grid;	
+  grid-template-rows: 1fr;
+  padding: 30px 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  display: grid;
+  row-gap: 0px;
+}
+
+.sidebar li {
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #a6a6a6;
+  font-size: 1.2em;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-end; /* agora o conteúdo vai para a parte inferior */
+  padding: 0 40px 100px 0px; /* topo | laterais | fundo */
+  position: relative;
+}
+
+.texto-destaque {
+  background-color:#a6a6a6e1 ;
+  padding: 30px 40px;
+  max-width: 1200px;
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 1.6em;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
