@@ -1,27 +1,233 @@
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  /* Background padrão para desktop */
+  background: url("../assets/fundo-9-scotts.png") no-repeat center center/cover;
+  min-height: 100vh;
 
-html, body {
+  font-family: 'Old Standard TT', serif;
+  font-size: 62.5%; /* 1rem = 10px (considerando padrão do navegador de 16px) */
+}
+:root {
+  --primary-color: #100f0d;
+  --text-color: #a6a6a6;
+  --tomato: #7f1f1f;
+}
+
+body {
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+.title{
+  display: flex;
+  font-size: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  width: 90%;
+
+  a{
+    text-decoration: none;
+    text-align: center;
+    color: var(--primary-color);
+    border-radius: 1rem;
+    align-self: center;
+    width: 20%;
+    padding: 1rem;
+    background-color: var(--text-color);
+  }
+  
+  h1{
+    color: var(--primary-color);
+    align-self: baseline;
+    text-align: center;
+    width: 90%;
+    /* margin-right: 40%; */
+  }
+}
+.title a:hover{
+  background-color: var(--tomato);
+}
+
+.primeira-linha{
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite quebra de linha em telas pequenas */
+  gap: 8rem; /* Espaçamento entre os cards */
+  margin-bottom: 5rem;
+  row-gap: 2rem;
+}
+
+.card{
+  font-family: 'Old Standard TT', serif;
+  font-size: 2.7rem;
+  cursor: pointer;
+  width: 25rem;
+  height: 40rem;
+  background-color: var(--text-color);
+  border-radius: 2rem;
+
+  img{
+    top: 0;
+    width: 220px; /* Altura original vira largura */
+    height: 300px; /* Largura original vira altura */
+    object-fit: cover; /* Corta as laterias mantendo proporção */
+    object-position: center; /* Foca no centro da imagem */
+  }
+}
+
+.card:hover{
+  background-color: var(--tomato);
+  color: var(--text-color);
+}
+
+.modal{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  font-family: 'Old Standard TT', serif;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow-y: auto;
+}
+
+.content-modal {
+  display: flex;
+  background-color: var(--text-color);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 85%;
+  max-height: 85vh;
+  overflow: hidden;
+  margin: 20px auto;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.content-modal img {
+  width: 40%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content-modal > div {
+  width: 60%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content-modal h2 {
+  color: var(--text-color);
+  background-color: var(--tomato);
+  margin-bottom: 20px;
+  font-size: 4rem;
+  border-radius: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.content-modal p {
+  color: var(--primary-color);
+  line-height: 2;
+  margin-bottom: 25px;
+  font-size: 3rem;
+  flex-grow: 1;
+}
+
+.content-modal .fechar-modal {
+  align-self: flex-end;
+  background-color: #7f1f1f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.content-modal .fechar-modal:hover {
+  background-color: #6a1919;
+}
+.modal.show {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 1;
 }
 
-.container {
-  width: 1600px;
-  height: 900px;
-  background: url("../assets/capa-menu.jpg") no-repeat center center fixed;
-  background-size: cover;
-  display: flex;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  border-radius: 6px;
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .content-modal {
+    flex-direction: column;
+
+    p{
+      line-height: 1.6;
+    }
+  }
+  
+  .content-modal img,
+  .content-modal > div {
+    width: 100%;
+  }
+  
+  .content-modal img {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .title{
+    flex-direction: column;
+
+    a{
+      align-self: center;
+      width: 100%;
+      padding: 1rem;
+      color: var(--text-color);
+      background-color: var(--primary-color);
+    }
+    h1{
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  .primeira-linha{
+    gap: 1rem;
+  }
+  .segunda-linha{
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .card{
+    width: 35rem;
+    height: 45rem;
+    img{
+      width: 300px; /* Altura original vira largura */
+      height: 350px; /* Largura original vira altura */
+    }
+  }
+
 }

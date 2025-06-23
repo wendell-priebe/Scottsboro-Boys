@@ -192,6 +192,13 @@ body {
   background-color: #6a1919;
 }
 
+.modal.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
 /* Responsividade */
 @media screen and (max-width: 768px) {
   .content-modal {
@@ -208,12 +215,7 @@ body {
   }
 }
 
-.modal.show {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 1;
-}
+
 
 /* Estilos para celular */
 @media screen and (max-width: 767px) {

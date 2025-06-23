@@ -23,6 +23,19 @@ body {
   min-height: 100vh;
 }
 
+.logo-ucpel{
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Coloca ATRÁS do conteúdo */
+  opacity: 1; /* Ajuste a transparência */
+  width: 13vw;
+  height: 30vh;
+  pointer-events: none; /* Permite interação com elementos abaixo */
+  filter: drop-shadow(0 0 30px #000);
+}
+
 .container{
   display: flex;
   min-height: 100vh;
