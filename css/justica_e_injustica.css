@@ -1,27 +1,178 @@
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  /* Background padrão para desktop */
+  background: var(--text-color) url("../assets/fundo-justica-injustica.jpg") no-repeat center center/cover;
+  min-height: 100vh;
 
-html, body {
+  font-family: 'Old Standard TT', serif;
+  font-size: 62.5%; /* 1rem = 10px (considerando padrão do navegador de 16px) */
+}
+:root {
+  --primary-color: #100f0d;
+  --text-color: #a6a6a6;
+  --tomato: #7f1f1f;
+  --branco: #fff;
+  --preto: #000;
+}
+
+body {
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+.container{
+  color: var(--branco);
+  background-color: var(--primary-color);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  right: 0;
+  width: 30%;
+  height: 100%;
+}
+
+.content{
+  text-align: center;
+  h1{
+    font-size: 5.2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  h2{
+    font-size: 2.4rem;
+  }
+}
+
+.sidebar{
+  margin: 0;
+  padding: 0;
+  text-align: right;
+
+  ul{
+    list-style: none;
+  }
+  li{
+    padding: 2rem;
+    cursor:pointer;
+
+  }
+  a{
+    text-decoration: none;
+    cursor:pointer;
+    font-size: 2.4rem;
+    color: var(--branco);
+  }
+}
+
+.sidebar li:hover{
+  background-color: var(--preto);
+  width: 100%;
+}.sidebar a:hover{
+  background-color: var(--preto);
+  width: 100%;
+}
+
+.modal{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  font-family: 'Old Standard TT', serif;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow-y: auto;
+}
+
+.content-modal {
+  background-color: var(--preto);
+  color: var(--branco);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 85%;
+  max-height: 85vh;
+  overflow: hidden;
+  margin: 20px auto;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.content-modal h2 {
+  margin-bottom: 20px;
+  font-size: 4rem;
+  padding: 10px;
+}
+
+.content-modal p {
+  line-height: 2;
+  margin-bottom: 25px;
+  font-size: 3rem;
+}
+
+.content-modal .fechar-modal {
+  align-self: flex-end;
+  background-color: var(--text-color);
+  color: var(--preto);
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: background-color 0.3s;
+}
+
+.content-modal .fechar-modal:hover {
+  background-color: #6a1919;
+}
+.modal.show {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 1;
 }
 
-.container {
-  width: 1600px;
-  height: 900px;
-  background: url("../assets/capa-menu.jpg") no-repeat center center fixed;
-  background-size: cover;
-  display: flex;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  border-radius: 6px;
+/* Responsividade */
+@media screen and (max-width: 768px) {
+
+  .container {
+    flex-direction: column;
+    width: 100% !important;
+    padding: 1rem;
+  }
+
+  .content h2{
+    display: none;
+  }
+  
+  .sidebar {
+    background-color: var(--primary-color);
+    text-align: center;
+    position: relative;
+    width: 100%;
+    margin-left: 0;
+
+    li{
+      margin-top: 0;
+    }
+  }
+
+  .content-modal {
+    flex-direction: column;
+    p{
+      line-height: 1.6;
+    }
+  }
+  .content-modal > div {
+    width: 100%;
+  }
 }

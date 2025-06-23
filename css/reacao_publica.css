@@ -1,28 +1,159 @@
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  /* Background padrão para desktop */
+  background: var(--text-color) url("../assets/FundoReacaoPublica.png") no-repeat center center/cover;
+  min-height: 100vh;
 
-html, body {
+  font-family: 'Old Standard TT', serif;
+  font-size: 62.5%; /* 1rem = 10px (considerando padrão do navegador de 16px) */
+}
+:root {
+  --primary-color: #100f0d;
+  --text-color: #a6a6a6;
+  --tomato: #7f1f1f;
+  --branco: #fff;
+  --preto: #000;
+}
+
+body {
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+.container{
+  bottom: 0;
+  position: fixed;
+  text-align: center;
+  overflow-y: auto;
+
+  h1{
+    font-size: 8.2rem;
+    padding: 2rem;
+    background-color: var(--tomato);
+    color: var(--branco);
+    display: inline;
+  }
+}
+
+
+.sidebar{
+  margin: 0 1rem 0 1rem;
+  padding: 2rem;
+  text-align: right;
+  background-color: var(--primary-color);
+  color: var(--branco);
+  text-align: center;
+
+  h2{
+    font-size: 3.5rem;
+  }
+
+  ul{
+    list-style: none;
+  }
+  li{
+    padding: 2rem;
+    cursor:pointer;
+  }
+  a{
+    text-decoration: none;
+    cursor:pointer;
+    font-size: 2.4rem;
+    color: var(--branco);
+  }
+}
+
+.sidebar li:hover{
+  background-color: var(--preto);
+  /* width: 100%; */
+}.sidebar a:hover{
+  background-color: var(--preto);
+  /* width: 100%; */
+}
+
+
+
+.modal{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  font-family: 'Old Standard TT', serif;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow-y: auto;
+}
+
+.content-modal {
+  background-color: var(--primary-color);
+  color: var(--branco);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 3rem;
+  width: 85%;
+  max-height: 85vh;
+  overflow: hidden;
+  margin: 20px auto;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.content-modal h2 {
+  margin-bottom: 20px;
+  font-size: 4rem;
+  padding: 10px;
+  background-color: var(--tomato);
+}
+
+.content-modal p {
+  line-height: 2;
+  margin-bottom: 25px;
+  font-size: 3rem;
+}
+
+.content-modal .fechar-modal {
+  align-self: flex-end;
+  background-color: var(--text-color);
+  color: var(--preto);
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: background-color 0.3s;
+}
+
+.content-modal .fechar-modal:hover {
+  background-color: #6a1919;
+}
+.modal.show {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 1;
 }
 
-.container {
-  width: 1600px;
-  height: 900px;
-  background: url("../assets/capa-menu.jpg") no-repeat center center fixed;
-  background-size: cover;
-  display: flex;
+@media screen and (max-width: 768px) {
 
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  border-radius: 6px;
+  .container {
+    position: absolute; /* Permite posicionar no rodapé */
+    bottom: 0; /* Cola no fundo */
+    left: 0;
+    right: 0;
+    top: 0; /* Ocupa toda a altura, permitindo scroll */
+    overflow-y: auto; /* Habilita scroll se o conteúdo for maior que a tela */
+    text-align: center;
+    
+    h1{
+      margin-top: 2rem !important;
+    }
+  }
 }

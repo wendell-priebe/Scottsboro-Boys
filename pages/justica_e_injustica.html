@@ -3,14 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <title>Scottsboro Boys</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../js/justica_injustica.js"></script>
   <link rel="stylesheet" href="../css/justica_e_injustica.css">
 
 </head>
 </head>
 <body>
   <div class="container">
+    <div class="content">
+      <h1>Justiça e Injustiça</h1>
+      <h2>O Caso Scottsboro é um dos maiores exemplos de como o sistema de justiça pode ser manipulado por preconceitos raciais, interesses políticos e pressões sociais.</h2>
+    </div>
+    <nav class="sidebar">
+      <ul>
+        <li class="btn-abrir-modal card" data-modal-id="falta"><a>Falta de Defesa Adequada</a></li>
+        <li class="btn-abrir-modal card" data-modal-id="racismo"><a>Racismo nos Júris</a></li>
+        <li class="btn-abrir-modal card" data-modal-id="ausencia"><a>Ausência Total de Provas</a></li>
+        <li class="btn-abrir-modal card" data-modal-id="pressao"><a>Pressão Popular e Mídia Sensacionalista</a></li>
+        <li class="btn-abrir-modal card" data-modal-id="principios"><a>Princípios Constitucionais Violados</a></li>
+        <li><a href="/pages/menu.html">Voltar menu</a></li>
+      </ul>
+      
+    </nav>
     
-    <a href="pages/menu.html">Inicio</a>
+    <div class="lista-modais">
+
+      <div class="modal " id="falta">
+        <div class="content-modal">
+          <h2>Falta de Defesa Adequada</h2>
+          <p>
+            Durante o primeiro julgamento, em 1931, os nove jovens foram representados por advogados designados pelo Estado apenas minutos antes do início da audiência. Esses advogados não conheciam os réus, não tiveram tempo de preparar uma defesa e muitos deles sequer tinham experiência com casos de pena de morte.
+            Em 1932, no caso Powell v. Alabama, a Suprema Corte dos Estados Unidos reconheceu que essa ausência de defesa violava o direito ao devido processo legal garantido pela 14ª Emenda da Constituição.
+            Essa decisão foi um marco jurídico: a partir dela, tornou-se obrigatório o direito à assistência jurídica competente para réus em casos capitais, mesmo que não tenham condições financeiras.
+          </p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>
+
+      <div class="modal " id="racismo">
+        <div class="content-modal">
+          <h2>Racismo nos Júris</h2>
+          <p>
+            Outro aspecto grave foi a composição racial dos júris. Todos os jurados dos julgamentos iniciais eram brancos, o que refletia a exclusão sistemática de afro-americanos do processo jurídico no Alabama da época.
+
+            Em Norris v. Alabama (1935), a Suprema Corte declarou que essa exclusão era inconstitucional, gerando um precedente fundamental para garantir a representatividade racial nos júris dos Estados Unidos.
+
+            Porém, no caso dos Scottsboro Boys, os jovens foram julgados por júris claramente parciais, o que comprometeu a imparcialidade desde o início.
+          </p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>
+
+      <div class="modal " id="ausencia">
+        <div class="content-modal">
+          <h2>Ausência Total de Provas</h2>
+          <p>
+            Não havia nenhuma evidência física que sustentasse as acusações. Exames médicos feitos nas supostas vítimas não mostraram sinais de estupro. Além disso:
+
+            Uma das acusadoras, Ruby Bates, mais tarde confessou que havia mentido.
+            Testemunhas apresentadas eram frágeis e contraditórias.
+            Não houve investigação policial técnica.
+
+            Mesmo assim, os jovens foram condenados. O que os levou ao tribunal não foram provas... foi o preconceito racial e a pressão popular.
+          </p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>
+
+      <div class="modal " id="pressao">
+        <div class="content-modal">
+          <h2>Pressão Popular e Mídia Sensacionalista</h2>
+          <p>
+            A cobertura da mídia local alimentou o pânico moral. Manchetes descreviam os jovens como "predadores perigosos", muitas vezes com termos explicitamente racistas.
+
+            Multidões se formavam do lado de fora do tribunal, gritando por execuções públicas.
+
+            Juízes e jurados eram pressionados não apenas pela lei, mas também pela opinião pública local, o que tornou impossível um julgamento justo.  
+          </p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>
+
+      <div class="modal " id="principios">
+        <div class="content-modal">
+          <h2>Princípios Constitucionais Violados</h2>
+          <p>
+            O caso dos Scottsboro Boys representa a violação de diversos direitos fundamentais garantidos pela Constituição Americana:
+            Direito à defesa adequada,
+            Julgamento por júri imparcial,
+            Presunção de inocência,
+            Direito a um processo legal justo,
+            Igualdade racial no acesso à justiça.
+
+            O caso expôs a fragilidade do sistema quando colocado diante de preconceitos sociais e raciais, não foi apenas um erro judiciário isolado. Ele escancarou um sistema estruturalmente racista, seletivo e desigual, cujas marcas continuam ecoando no sistema penal até os dias de hoje.
+          </p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>
+    </div>
 
   </div>
 </body>

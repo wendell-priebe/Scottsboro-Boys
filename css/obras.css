@@ -6,8 +6,7 @@
 }
 html {
   /* Background padrão para desktop */
-  background-color: #393839;
-  color: var(--branco);
+  background: var(--text-color) url("../assets/FundoObras.png") no-repeat center center/cover;
   min-height: 100vh;
 
   font-family: 'Old Standard TT', serif;
@@ -30,19 +29,18 @@ body {
   padding: 2rem;
   line-height: 1.4;
   h1{
-    font-size: 5rem;
+    font-size: 7.4rem;
     font-weight: bold;
-    width: 35%;
-    margin: 1rem auto;
+    width: 15%;
+    margin: 0 auto;
     text-shadow:  2px 2px 4px rgba(0, 0, 0, 0.9);
     margin-bottom: 3rem;
     background-color: var(--tomato);
     text-align: center;
   }
   p{
-    line-height: 2;
     text-align: left;
-    font-size: 2rem;
+    font-size: 3rem;
     width: 90%;
     margin: 0 auto;
     margin-bottom: 2rem;
