@@ -1,85 +1,122 @@
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
-  background: url("../assets/capa-menu.jpg") no-repeat center center fixed;
+  /* Background padrão para desktop */
+  background: var(--text-color) url("../assets/capa-menu.jpg") no-repeat center center/cover;
+  min-height: 100vh;
+
   font-family: 'Old Standard TT', serif;
-  background-size: cover;
   font-size: 62.5%; /* 1rem = 10px (considerando padrão do navegador de 16px) */
 }
-
 :root {
   --primary-color: #100f0d;
   --text-color: #a6a6a6;
-  --bg-color: #f9f9f9;
+  --tomato: #7f1f1f;
 }
 
 body {
   color: var(--text-color);
-  background-color: var(--bg-color);
+  min-height: 100vh;
 }
 
-.container {
+.container{
   display: flex;
   min-height: 100vh;
-  padding-left: 40px; /* espaço entre a borda da tela e a sidebar */
 }
 
-.sidebar {
+.sidebar{
   background-color: var(--primary-color);
-
-}
-
-.sidebar ul {
-  list-style: none;
-}
-
-.sidebar li {
-  margin-bottom: 5px;
-}
-
-.sidebar a {
-  color: var(--text-color);
-  text-decoration: none;
-  padding: 12px 20px;
-  transition: all 0.3s;
-
-}
-
-.sidebar a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.content {
-  flex: 1;
-  margin-left: var(--sidebar-width);
+  margin-left: 4rem;
+  max-width: 20%;
+  z-index: 10;            /* Garante que fique acima da caixa cinza */
+  top: 0;
   bottom: 0;
-  margin-top: auto; /* Isso empurra o content para baixo */
-  max-height: 100vh;
-  overflow-y: auto;
+  position: fixed;
+
+  ul{
+    list-style: none;
+  }
+  li{
+    padding: 1rem;
+    margin-top: 3rem;
+    border: 1px solid #000;
+  }
+
+  a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 2.1rem;
+    padding: 2rem;
+    text-shadow: 1px 1px 2px var(--primary-color);
+    cursor: pointer;
+  }
 }
 
-.texto-destaque {
-  background-color: var(--text-color);
-  color: var(--primary-color);
-  padding: 20px;
+.sidebar li:first-child{
+  margin-top: 5rem;
+}
+
+.sidebar li:hover{
+  background-color: var(--tomato);
+}
+
+.content{
+  position: fixed;
   text-align: center;
-  font-style: italic;
-
-
+  background-color: var(--text-color);
+  color: #000;
+  width: 100%;
+  bottom: 0;
 }
 
-/* Estilos para tablet na horizontal */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
+.texto-destaque{
+  padding: 2rem;
+  font-size: 3.8rem;
+  margin-left: 30rem;
+  line-height: 1.5;
 }
 
 /* Estilos para celular */
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
+  html body{
+    background: var(--text-color) !important;
+    background-image: none !important; 
+  }
+  
+  .container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    background-color: var(--primary-color);
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
 
+    li{
+      margin-top: 0;
+    }
+  }
+  .sidebar li:first-child{
+    margin-top: 0;
+  }
+  .sidebar a{
+    padding: 1.5rem;
+  }
+  
+  .texto-destaque {
+    margin-left: 0;
+    line-height: 1.3;
+    font-size: 2.7rem;
+  }
+  
+  .content {
+    position: static;
+  }
 }

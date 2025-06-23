@@ -2,64 +2,173 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1600, height=900">
   <title>Meu Site no Tablet</title>
   <link rel="stylesheet" href="../css/linha_do_tempo.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="../js/linha_do_tempo.js"></script>
 </head>
 <body>
   <div class="container">
-    
-    <a href="menu.html">Inicio</a>
 
-    <nav class="">
+    <nav class="sidebar">
       <ul>
-        <li><button class="btn-abrir-modal" data-modal-id="m1931">25 de março de 1931 - Prisão</button></li>
-        <li><button class="btn-abrir-modal" data-modal-id="a1931">Abril de 1931 - Julgamento inicial</button></li>
-        <li><button class="btn-abrir-modal" data-modal-id="1932">1932 - Powell v. Alabama</button></li>
-        <li><button class="btn-abrir-modal" data-modal-id="1935">1935 - Norris v. Alabama</button></li>
-        <li><button class="btn-abrir-modal" data-modal-id="1940">Década de 1940-1950 - Liberação</button></li>
-        <li><button class="btn-abrir-modal" data-modal-id="2013">2013 - Perdão póstumo</button></li>
+        <li>
+          <!-- <img src="/assets/seta-index.png" alt=""> -->
+          <a href="/pages/menu.html"> Voltar menu</a>
+        </li>
+
+        <li><a class="btn-abrir-modal " data-modal-id="a1931">
+          <p>Abril de 1931</p> <p>Primeiros Julgamentos em Scottsboro</p>
+        </a></li>
+
+        <li><a class="btn-abrir-modal " data-modal-id="m1931">
+          <p>25 de março de 1931</p> <p>Prisão dos Nove de Scottsboro</p>  
+        </a></li>
+
+        <li><a class="btn-abrir-modal " data-modal-id="1932"> 
+          <p>1932</p> <p>Caso Powell v. Alabama</p> 
+        </a></li>
+
+        <li><a class="btn-abrir-modal " data-modal-id="1933"> 
+          <p>1933</p> <p>Novos Julgamentos com Samuel Leibowitz</p> 
+        </a></li>
+
+        <li><a class="btn-abrir-modal " data-modal-id="1935"> 
+          <p>1935</p> <p>Caso Norris v. Alabama</p> 
+        </a></li>
+
+        <li><a class="btn-abrir-modal " data-modal-id="1937"> 
+          <p>1937</p> <p>Libertações e Reduções de Pena</p> 
+        </a></li>
+
+        <li><a class="btn-abrir-modal " data-modal-id="1944"> 
+          <p>1944</p> <p>Última Libertação</p> 
+        </a></li>
+
+        <li><a class="btn-abrir-modal " data-modal-id="2013"> 
+          <p>1976 a 2013</p> <p>Perdões Oficiais</p> 
+        </a></li>
       </ul>
     </nav>
+
+    <main class="content">
+      <div class="texto-destaque">
+        <p>Os Nove de Scottsboro foram inocentes desde o começo.</p>
+        <p>Mas o mundo levou décadas para enxergar...</p>
+        <p>A pergunta que fica é: nós estamos enxergando agora?</p>
+      </div>
+    </main>
+
   </div>
-  <div class="">
+
+
+  <div class="lista-modais">
+
     <div class="modal " id="m1931">
-      <h2>25 de março de 1931 – Prisão</h2>
-      <img src="../assets/SCOTTS.jpg" alt="">
-      <p>Nove jovens negros são presos na cidade de Scottsboro, Alabama, após denúncia de estupro feita por Victoria Price e Ruby Bates.</p>
-      <button class="fechar-modal">Fechar</button>
+      <div class="content-modal">
+        <img src="../assets/m1931.jpg" alt="">
+        <div>
+          <h2>25 de março de 1931 Prisão dos Nove de Scottsboro</h2>
+          <p>
+            Nove jovens afro-americanos foram presos na cidade de Paint Rock, Alabama, após serem acusados por duas mulheres brancas, Victoria Price e Ruby Bates, de estupro dentro de um trem de carga. O episódio ocorreu logo após uma briga entre os rapazes negros e jovens brancos, que também viajavam ilegalmente no trem.
+          </p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>
     </div>
+
+    
     <div class="modal " id="a1931">
-      <h2>Abril de 1931 – Julgamento inicial</h2>
-      <img src="../assets/SCOTTS.jpg" alt="">
-      <p>O julgamento acontece em tempo recorde. Os réus não têm acesso a advogados preparados. Oito são condenados à morte e um à prisão perpétua</p>
-      <button class="fechar-modal">Fechar</button>
+      <div class="content-modal">
+        <img src="../assets/a1931.jpeg" alt="">
+        <div>
+          <h2>Abril de 1931 Primeiros Julgamentos em Scottsboro</h2>
+          <p>
+            Os julgamentos foram extremamente rápidos. Em apenas quatro dias, oito dos acusados foram condenados à morte e um, Roy Wright, teve julgamento suspenso devido a impasse no júri. As decisões ocorreram mesmo com a fragilidade das provas e com contradições nos depoimentos das supostas vítimas.
+          </p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>
     </div>
+
     <div class="modal " id="1932">
-      <h2>1932 – Powell v. Alabama</h2>
-      <img src="../assets/scottsboro-boys-walking-1400x844.jpeg" alt="">
-      <p>A Suprema Corte dos EUA anula as condenações por falta de defesa adequada, estabelecendo o direito constitucional à assistência legal em casos capitais.</p>
-      <button class="fechar-modal">Fechar</button>
+      <div class="content-modal">
+        <img src="../assets/1932.jpg" alt="">
+        <div>
+          <h2>1932 Caso Powell v. Alabama</h2>
+          <p>
+            A Suprema Corte dos Estados Unidos anulou as condenações, reconhecendo que os réus não tiveram direito a uma defesa adequada. Esta foi uma decisão histórica, que reforçou o direito ao devido processo legal, estabelecendo a obrigação do Estado de garantir defesa competente a todos os acusados.
+          </p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>
     </div>
+
+    <div class="modal " id="1933">
+      <div class="content-modal">
+        <img src="../assets/1933.png" alt="">
+        <div>
+          <h2>1933 Novos Julgamentos com Samuel Leibowitz</h2>
+          <p>
+            O advogado nova-iorquino Samuel Leibowitz assumiu a defesa. Apesar de conseguir evidenciar as contradições nos depoimentos de Victoria Price e Ruby Bates, os réus foram novamente condenados, o que evidenciava o preconceito racial presente nos tribunais locais.
+          </p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>  
+    </div>
+
     <div class="modal " id="1935">
-      <h2>1935 – Norris v. Alabama</h2>
-      <img src="../assets/SB_TRTRA.jpg" alt="">
-      <p>Nova vitória jurídica. A Corte determina que a exclusão sistemática de negros dos júris é inconstitucional, estabelecendo um marco para a justiça racial.</p>
-      <button class="fechar-modal">Fechar</button>
+      <div class="content-modal">
+        <img src="../assets/1935.jpg" alt="">
+        <div>
+          <h2>1935 Norris v. Alabama</h2>
+          <p>
+            A Suprema Corte interveio novamente. Desta vez, o motivo foi a exclusão sistemática de cidadãos negros dos júris. A decisão declarou inconstitucional a formação de júris exclusivamente brancos, criando um precedente contra a discriminação racial no processo de seleção de jurados.
+          </p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>
     </div>
-    <div class="modal " id="1940">
-      <h2>Década de 1940–1950 – Liberação</h2>
-      <img src="../assets/scottsboroboysplaca.webp" alt="">
-      <p>Após anos de prisões e novos julgamentos, os Scottsboro Boys são libertados gradualmente.</p>
-      <button class="fechar-modal">Fechar</button>
+
+    <div class="modal " id="1937">
+      <div class="content-modal">
+        <img src="../assets/1937.webp" alt="">
+        <div>
+          <h2>1937 Libertações e Reduções de Pena</h2>
+          <p>
+            Quatro dos réus foram libertados após acordos judiciais. Os demais permaneceram presos, com penas reduzidas, mas ainda longas.
+          </p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>
     </div>
+
+    <div class="modal " id="1944">
+      <div class="content-modal">
+        <img src="../assets/1944.jpeg" alt="">
+        <div>
+          <h2>1944 Última Libertação:</h2>
+          <p>
+            O último dos Scottsboro Boys deixou a prisão, encerrando o período de encarceramento do grupo.
+          </p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+
     <div class="modal " id="2013">
-      <h2>2013 – Perdão póstumo</h2>
-      <img src="../assets/scottsboro-boys-freed-2013.jpeg" alt="">
-      <p>O estado do Alabama concede perdão oficial aos três últimos rapazes que ainda não tinham sido exonerados.</p>
-      <button class="fechar-modal">Fechar</button>
+      <div class="content-modal">
+        <img src="../assets/1976-2013.jpg" alt="">
+        <div>
+          <h2>1976 a 2013 Perdões Oficiais</h2>
+          <p>
+            Clarence Norris recebeu perdão total em 1976. Em 2013, os três réus que ainda não tinham sido oficialmente perdoados receberam o perdão póstumo, encerrando o caso judicialmente.
+          </p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>
     </div>
+
   </div>
 </body>
 

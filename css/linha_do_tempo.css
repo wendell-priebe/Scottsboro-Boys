@@ -1,127 +1,271 @@
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
-
-:root {
-  --primary-color: #100f0d;
-  --text-color: #a6a6a6;
-  --bg-color: #f9f9f9;
-  --sidebar-width: 250px;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-body {
-  background: url("../assets/scottsboro-map-trem.jpg") no-repeat center center fixed;
-  background-size: cover;
+/* html {
+  background: url("../assets/scottsboro-map-trem.jpg") no-repeat center center/cover;
+  min-height: 100vh;
   font-family: 'Old Standard TT', serif;
-  color: var(--text-color);
-  background-color: var(--bg-color);
-  line-height: 1.6;
+  font-size: 62.5%; 
+} */
+ html {
+  position: relative;
+  min-height: 100vh;
+  font-family: 'Old Standard TT', serif;
+  font-size: 62.5%;
 }
 
-.container {
+html::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/scottsboro-map-trem.jpg") no-repeat center center/cover;
+  opacity: 0.7; /* Ajuste a opacidade (0.0 a 1.0) */
+  z-index: -1; /* Mantém atrás do conteúdo */
+}
+:root {
+  --primary-color: #100f0d;
+  --text-color: #a6a6a6;
+  --tomato: #7f1f1f;
+  --branco: #fff;
+}
+
+body {
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+.container{
   display: flex;
   min-height: 100vh;
 }
 
+.sidebar{
+  background-color: var(--primary-color);
+  margin-left: 4rem;
+  max-width: 20%;
+  z-index: 10;            /* Garante que fique acima da caixa cinza */
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  text-align: center;
 
-/* Estilo base para todas as modais */
-.modal {
+  ul{
+    list-style: none;
+  }
+  li{
+    /* padding: 1rem; */
+    margin-top: 3rem;
+    border: 1px solid #000;
+  }
+
+  a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 2.1rem;
+    padding:0;
+    margin: 0;
+    text-shadow: 1px 1px 2px var(--primary-color);
+    cursor: pointer;
+  }
+  p{
+    padding: 0;
+  }
+}
+/* .sidebar img{
+    transform: rotate(270deg) ;
+    width: 2rem; 
+    height: 2rem;
+    border: 0px inset #411010;
+    background-color: #7f1f1f;
+    border-radius: 1px;
+    box-shadow: -1px -2px grey;
+    transition: 200ms;
+} */
+
+.sidebar li:first-child{
+  margin-top: 5rem;
+  padding: 1rem !important;
+  text-align: center;
+}
+
+.sidebar li:hover{
+  background-color: var(--tomato);
+}
+
+.content{
+  position: fixed;
+  text-align: center;
+  background-color: var(--text-color);
+  color: #000;
+  width: 100%;
+  bottom: 0;
+}
+
+.texto-destaque{
+  padding: 2rem;
+  font-size: 3.8rem;
+  margin-left: 30rem;
+  line-height: 1.5;
+}
+
+.modal{
   display: none;
   position: fixed;
   top: 0;
   left: 0;
-  width: 60%;
-  height: 60%;
-  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
-  justify-content: center;
-  align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease;
-}
-
-/* Quando a modal está visível */
-.modal.show {
-  display: flex;
-  opacity: 1;
-}
-
-/* Conteúdo da modal */
-.modal > div {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 700px;
-  max-height: 90vh;
   overflow-y: auto;
-  position: relative;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-  transform: translateY(-20px);
-  transition: transform 0.3s ease;
 }
 
-.modal.show > div {
-  transform: translateY(0);
+.content-modal {
+  display: flex;
+  background-color: var(--text-color);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 85%;
+  /* max-width: 1000px; */
+  max-height: 85vh;
+  overflow: hidden;
+  margin: 20px auto;
+  text-align: center;
+  overflow-y: auto;
 }
 
-/* Estilo do conteúdo interno */
-.modal h2 {
-  color: #2c3e50;
+.content-modal img {
+  width: 40%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content-modal > div {
+  width: 60%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content-modal h2 {
+  color: var(--text-color);
+  background-color: var(--tomato);
   margin-bottom: 20px;
-  font-size: 1.8em;
-  border-bottom: 2px solid #e74c3c;
+  font-size: 4rem;
+  border-radius: 1rem;
+  border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
 }
 
-.modal img {
-  width: 100%;
-  height: auto;
-  max-height: 300px;
-  object-fit: cover;
-  margin: 15px 0;
-  border-radius: 4px;
-}
-
-.modal p {
-  color: #333;
+.content-modal p {
+  color: var(--primary-color);
   line-height: 1.6;
-  margin-bottom: 20px;
-  font-size: 1.1em;
+  margin-bottom: 25px;
+  font-size: 3rem;
+  flex-grow: 1;
 }
 
-.modal button {
-  background-color: #e74c3c;
+.content-modal .fechar-modal {
+  align-self: flex-end;
+  background-color: #7f1f1f;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 1rem;
   transition: background-color 0.3s;
 }
 
-.modal button:hover {
-  background-color: #c0392b;
+.content-modal .fechar-modal:hover {
+  background-color: #6a1919;
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
-  .modal > div {
-    width: 95%;
-    padding: 20px;
-  max-height: 85vh;
+@media screen and (max-width: 768px) {
+  .content-modal {
+    flex-direction: column;
   }
   
-  .modal h2 {
-    font-size: 1.5em;
+  .content-modal img,
+  .content-modal > div {
+    width: 100%;
+  }
+  
+  .content-modal img {
+    height: 200px;
   }
 }
 
+.modal.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+/* Estilos para celular */
+@media screen and (max-width: 767px) {
+  html body{
+    background: var(--text-color) !important;
+    background-image: none !important; 
+  }
+  
+  .container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    background-color: var(--primary-color);
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+
+    li{
+      margin-top: 0;
+    }
+  }
+  .sidebar li:first-child{
+    margin-top: 0;
+  }
+  .sidebar li{
+    padding: 1rem;
+  }
+  .sidebar a{
+    padding: 0;
+  }
+  
+  .texto-destaque {
+    margin-left: 0;
+    line-height: 1.3;
+    font-size: 2.7rem;
+  }
+  
+  .content {
+    position: static;
+  }
+
+  .content-modal {
+    width: 95%;
+    max-height: 95vh;
+  }
+  .content-modal .fechar-modal{
+    width: 100%;
+  }
+
+}
 
 
 

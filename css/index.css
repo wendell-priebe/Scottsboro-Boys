@@ -48,19 +48,21 @@ html {
 .favicon-seta {
   text-align: center;
   margin-top: 1rem;
-
+  
   img {
     transform: rotate(180deg);
     width: 7rem; /* Tamanho personalizado */
     height: 7rem;
-    border: 2px solid #7f1f1f;
+    border: 2px inset #411010;
+    background-color: #7f1f1f;
     border-radius: 1.5rem;
+    box-shadow: -1px -2px grey;
     transition: 200ms;
   }
   img:hover {
     transform: scale(1.5);
     transition: 200ms;
-    border: none;
+    box-shadow: 1px 2px grey;
   }
 }
 
