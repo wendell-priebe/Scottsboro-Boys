@@ -25,13 +25,13 @@ body {
 
 .logo-ucpel{
   position: fixed;
-  top: 20%;
-  left: 50%;
+  top: 15rem;
+  right: 0;
   transform: translate(-50%, -50%);
   z-index: -1; /* Coloca ATRÁS do conteúdo */
   opacity: 1; /* Ajuste a transparência */
-  width: 13vw;
-  height: 30vh;
+  width: 10rem;
+  height: 15rem;
   pointer-events: none; /* Permite interação com elementos abaixo */
   filter: drop-shadow(0 0 30px #000);
 }
