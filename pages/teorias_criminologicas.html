@@ -2,14 +2,85 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1600, height=900">
-  <title>Meu Site no Tablet</title>
+  <title>Scottsboro Boys</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../js/justica_injustica.js"></script>
   <link rel="stylesheet" href="../css/teorias_criminologicas.css">
 </head>
 <body>
   <div class="container">
+    <div class="content">
+      <h1>Teorias Criminológicas </h1>
+      <h2>O caso dos Scottsboro Boys pode ser analisado por diferentes teorias criminológicas, que ajudam a entender como fatores sociais, raciais e jurídicos influenciaram as decisões e injustiças ocorridas durante o processo.</h2>
+    </div>
+    <nav class="sidebar">
+      <ul>
+        <li class="btn-abrir-modal card" data-modal-id="conflito"><a>Teoria do Conflito</a></li>
+        <li class="btn-abrir-modal card" data-modal-id="processo-legal"><a>Teoria do Devido Processo Legal</a></li>
+        <li class="btn-abrir-modal card" data-modal-id="raca"><a>Teoria Crítica da Raça</a></li>
+        <li class="btn-abrir-modal card" data-modal-id="inadequada"><a>Teoria da Defesa Inadequada</a></li>
+        <li class="btn-abrir-modal card" data-modal-id="penal"><a>Preconceito Racial no Sistema Penal</a></li>
+        <li class="btn-abrir-modal card" data-modal-id="feminista"><a>Teoria Feminista</a></li>
+        <li><a href="/pages/menu.html">Voltar menu</a></li>
+      </ul>
+      
+      <img src="../assets/fundo-teorias.jpg" alt="">
+
+    </nav>
     
-    <a href="menu.html">Inicio</a>
+    <div class="lista-modais">
+
+      <div class="modal " id="conflito">
+        <div class="content-modal">
+          <p>
+            O caso demonstra como o sistema de justiça foi manipulado pelas elites brancas para manter o controle racial e social. As condenações serviram como ferramenta de dominação e reafirmação da hierarquia racial.  
+          </p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>
+
+      <div class="modal " id="processo-legal">
+        <div class="content-modal">
+          <p>
+            Destaca a importância do direito a um julgamento justo e à defesa adequada. A Suprema Corte, ao anular as primeiras sentenças, reforçou a necessidade de garantir os direitos constitucionais de qualquer acusado.
+          </p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>
+
+      <div class="modal " id="raca">
+        <div class="content-modal">
+          <p>Analisa como o racismo estrutural influenciou todas as etapas do processo: da prisão aos julgamentos, passando pela formação do júri e pela condução da defesa.</p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>
+
+      <div class="modal " id="inadequada">
+        <div class="content-modal">
+          <p>
+            Os réus sofreram com a falta de representação legal eficiente, fator que motivou a Suprema Corte a anular as primeiras condenações por violação ao devido processo legal.          </p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>
+
+      <div class="modal " id="penal">
+        <div class="content-modal">
+          <p>
+            A composição exclusivamente branca dos júris e a rapidez das condenações sem provas sólidas mostram o funcionamento discriminatório da justiça penal na época.          </p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>
+
+      <div class="modal " id="feminista">
+        <div class="content-modal">
+          <p>
+            O caso também pode ser analisado à luz da Teoria Feminista, considerando o papel das mulheres brancas como “vítimas ideais” na narrativa de acusação. A construção social da mulher branca como símbolo de pureza e fragilidade foi usada para validar as acusações, mesmo diante de contradições e ausência de provas concretas.          </p>
+          <button class="fechar-modal">Fechar</button>
+        </div>
+      </div>
+
+
+    </div>
 
   </div>
 </body>
